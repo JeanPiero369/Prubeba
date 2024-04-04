@@ -9,13 +9,13 @@ class Item(BaseModel):
 
 items=[]
 
-@app.post("/item")
+@app.post("/items")
 def add_item(item:Item,response:Response):
     item=item.append(item)
     response.status_code=201
     return{"item":item}
 
-@app.get("/item")
+@app.get("/items")
 def items():
     return items
 
